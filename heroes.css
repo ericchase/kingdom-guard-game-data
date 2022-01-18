@@ -23,6 +23,14 @@ body {
     border-radius: 0 5px 0 0;
 }
 
+#hero-ranks tbody tr:last-child td:first-child {
+    border-radius: 0 0 0 5px;
+}
+
+#hero-ranks tbody tr:last-child td:last-child {
+    border-radius: 0 0 5px 0;
+}
+
 #hero-ranks :is(th, td) {
     border-color: #999;
     border-style: solid;
