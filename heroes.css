@@ -1,0 +1,10 @@
+section#hero-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+section#hero-cards > .hero-item {
+    display: flex;
+    gap: 10px;
+}
