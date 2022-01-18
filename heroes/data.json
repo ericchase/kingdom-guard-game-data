@@ -1,0 +1,194 @@
+[
+    {
+        "rank": "S",
+        "rarity": "SSR",
+        "name": "Sahar",
+        "element": "Archer"
+    },
+    {
+        "rank": "S",
+        "rarity": "SSR",
+        "name": "Gruhn",
+        "element": "Goblin"
+    },
+    {
+        "rank": "S",
+        "rarity": "SSR",
+        "name": "Erica",
+        "element": "Fire"
+    },
+    {
+        "rank": "A",
+        "rarity": "SSR",
+        "name": "Cosette",
+        "element": "Fire"
+    },
+    {
+        "rank": "A",
+        "rarity": "SSR",
+        "name": "Rosamund",
+        "element": "Goblin"
+    },
+    {
+        "rank": "A",
+        "rarity": "SSR",
+        "name": "Paul",
+        "element": "Fire"
+    },
+    {
+        "rank": "A",
+        "rarity": "SSR",
+        "name": "Jessica",
+        "element": "Ice"
+    },
+    {
+        "rank": "A",
+        "rarity": "SSR",
+        "name": "Lomax",
+        "element": "Goblin"
+    },
+    {
+        "rank": "B",
+        "rarity": "SSR",
+        "name": "O'Neil",
+        "element": "Archer"
+    },
+    {
+        "rank": "B",
+        "rarity": "SSR",
+        "name": "Ariza",
+        "element": "Archer"
+    },
+    {
+        "rank": "B",
+        "rarity": "SSR",
+        "name": "Rudolph",
+        "element": "Ice"
+    },
+    {
+        "rank": "B",
+        "rarity": "SSR",
+        "name": "Wallis",
+        "element": "Fire"
+    },
+    {
+        "rank": "B",
+        "rarity": "SSR",
+        "name": "Allen",
+        "element": "Fire"
+    },
+    {
+        "rank": "B",
+        "rarity": "SSR",
+        "name": "Dolvar",
+        "element": "Fire"
+    },
+    {
+        "rank": "B",
+        "rarity": "SSR",
+        "name": "Meniere",
+        "element": "Goblin"
+    },
+    {
+        "rank": "C",
+        "rarity": "SSR",
+        "name": "Paula",
+        "element": "Ice"
+    },
+    {
+        "rank": "C",
+        "rarity": "SSR",
+        "name": "Gro",
+        "element": "Fire"
+    },
+    {
+        "rank": "C",
+        "rarity": "SSR",
+        "name": "Gabriel",
+        "element": "Archer"
+    },
+    {
+        "rank": "C",
+        "rarity": "SSR",
+        "name": "Claudia",
+        "element": "Goblin"
+    },
+    {
+        "rank": "D",
+        "rarity": "SSR",
+        "name": "Arthur",
+        "element": "Archer"
+    },
+    {
+        "rank": "D",
+        "rarity": "SSR",
+        "name": "Catherine",
+        "element": "Goblin"
+    },
+    {
+        "rank": "D",
+        "rarity": "SSR",
+        "name": "Hadi",
+        "element": "Ice"
+    },
+    {
+        "rank": "D",
+        "rarity": "SSR",
+        "name": "Nicole",
+        "element": "Ice"
+    },
+    {
+        "rank": "D",
+        "rarity": "SSR",
+        "name": "Isaac",
+        "element": "Goblin"
+    },
+    {
+        "rank": "D",
+        "rarity": "SSR",
+        "name": "Jennifer",
+        "element": "Archer"
+    },
+    {
+        "rank": "D",
+        "rarity": "SSR",
+        "name": "Ralph",
+        "element": "Ice"
+    },
+    {
+        "rank": "D",
+        "rarity": "SR",
+        "name": "Kris",
+        "element": "Fire"
+    },
+    {
+        "rank": "D",
+        "rarity": "SR",
+        "name": "Ophelia",
+        "element": "Fire"
+    },
+    {
+        "rank": "E",
+        "rarity": "SR",
+        "name": "Harold",
+        "element": "Archer"
+    },
+    {
+        "rank": "E",
+        "rarity": "SR",
+        "name": "Arwyn",
+        "element": "Archer"
+    },
+    {
+        "rank": "F",
+        "rarity": "SR",
+        "name": "Merlin",
+        "element": "Ice"
+    },
+    {
+        "rank": "F",
+        "rarity": "SR",
+        "name": "Alucard",
+        "element": "Goblin"
+    }
+]
