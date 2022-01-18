@@ -1,10 +1,134 @@
-section#hero-cards {
+body {
+    font-family: Roboto, Helvetica, Arial, sans-serif;
     display: flex;
     flex-direction: column;
-    gap: 10px;
 }
 
-section#hero-cards > .hero-item {
+#hero-ranks {
     display: flex;
-    gap: 10px;
+    margin: 0 auto;
+}
+
+#hero-ranks table {
+    font-size: 12px;
+    border-collapse: separate;
+    border-spacing: 0 2px;
+}
+
+#hero-ranks thead tr th:first-child {
+    border-radius: 5px 0 0 0;
+}
+
+#hero-ranks thead tr th:last-child {
+    border-radius: 0 5px 0 0;
+}
+
+#hero-ranks :is(th, td) {
+    border-color: #999;
+    border-style: solid;
+    border-width: 1px 1px 1px 0;
+}
+
+#hero-ranks :is(th, td):first-of-type {
+    border-left-width: 1px;
+}
+
+#hero-ranks th {
+    cursor: pointer;
+    color: #448acb;
+    background-color: #fff;
+    font-weight: bold;
+    padding: 0.5rem 0rem;
+}
+
+#hero-ranks td {
+    color: #333;
+    vertical-align: middle;
+    text-align: center;
+    padding: 0.3rem 0.5rem;
+}
+
+#hero-ranks .rank {
+    min-width: 4rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+#hero-ranks .rS .rank {
+    background-color: #ff7f7f50;
+}
+
+#hero-ranks .rA .rank {
+    background-color: #ffbf7f50;
+}
+
+#hero-ranks .rB .rank {
+    background-color: #ffff7f50;
+}
+
+#hero-ranks .rC .rank {
+    background-color: #bfff7f50;
+}
+
+#hero-ranks .rD .rank {
+    background-color: #7fff7f50;
+}
+
+#hero-ranks .rE .rank {
+    background-color: #93ccef50;
+}
+
+#hero-ranks .rF .rank {
+    background-color: #3f5af950;
+}
+
+#hero-ranks .rank {
+    min-width: 4rem;
+}
+
+#hero-ranks .rarity {
+    min-width: 6rem;
+}
+
+#hero-ranks .name {
+    min-width: 10rem;
+}
+
+#hero-ranks .element {
+    min-width: 8rem;
+}
+
+#hero-ranks .name > div > div:first-child {
+    overflow: hidden;
+    border: thin solid #fff;
+}
+
+#hero-ranks img {
+    width: 50px;
+    height: calc(50px * 0.85);
+    transform: scale(1.6);
+    object-fit: cover;
+}
+
+#hero-ranks .Archer .name > div > div:first-child {
+    box-shadow: 3px 3px 5px -1px #fcb82d;
+}
+
+#hero-ranks .Fire .name > div > div:first-child {
+    box-shadow: 3px 3px 5px -1px #ff1e19;
+}
+
+#hero-ranks .Goblin .name > div > div:first-child {
+    box-shadow: 3px 3px 5px -1px #33e675;
+}
+
+#hero-ranks .Ice .name > div > div:first-child {
+    box-shadow: 3px 3px 5px -1px #2caaff;
+}
+
+#hero-ranks .name > div {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
 }
