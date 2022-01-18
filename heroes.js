@@ -1,30 +1,49 @@
 let memoizedSorts = new Map();
-let sortedBy = 'rank';
+let sortedBy = '';
 
-function getRowsBy(sortBy) {
-    const rows = memoizedSorts.get(sortBy);
+const ascImg = `<img src="./arrow-asc.png" alt="">`;
+const dscImg = `<img src="./arrow-dsc.png" alt="">`;
 
+function setRows(rows) {
     document
         .querySelector('#hero-ranks > table > tbody')
-        .innerHTML = (sortBy === sortedBy)
-            ? rows.reverse().join('')
-            : rows.join('');
+        .innerHTML = rows;
+}
 
-    sortedBy = sortBy;
+function sortRowsBy(sortBy) {
+    const rows = memoizedSorts.get(sortBy);
+    const th = document.querySelector(`#hero-ranks thead th.${sortBy}`);
+    const sortDescending = !th.classList.contains('dsc');
+
+    document
+        .querySelectorAll('#hero-ranks thead th')
+        .forEach(th =>
+            th.classList.remove('asc', 'dsc'));
+
+    if (sortDescending) {
+        th.classList.add('dsc');
+        setRows(rows.join(''));
+    } else {
+        th.classList.add('asc');
+        setRows([...rows].reverse().join(''));
+    }
 }
 
 function createTable() {
+    const cells = ['Rank', 'Rarity', 'Name', 'Element']
+        .map(_ => `<th class="${_.toLowerCase()}" onclick="sortRowsBy('${_.toLowerCase()}')">
+            <div>
+                ${_}
+                <img class="asc" src="./arrow-asc-10px.png" alt="">
+                <img class="dsc" src="./arrow-dsc-10px.png" alt="">
+            </div>
+        </th>`)
+        .join('');
+
     document
         .querySelector('#hero-ranks')
         .innerHTML = `<table>
-            <thead>
-                <tr>
-                    <th onclick="getRowsBy('rank')">Rank</th>
-                    <th onclick="getRowsBy('rarity')">Rarity</th>
-                    <th onclick="getRowsBy('name')">Name</th>
-                    <th onclick="getRowsBy('element')">Element</th>
-                </tr>
-            </thead>
+            <thead><tr>${cells}</tr></thead>
             <tbody></tbody>
         </table>`;
 }
@@ -35,12 +54,10 @@ function toRows(heroData) {
     return `<tr class="r${rank} ${rarity} ${element}">
         <td class="rank">${rank}</td>
         <td class="rarity">${rarity}</td>
-        <td class="name">
-            <div>
-                <div><img src="./heroes/portraits/${name}.png" alt=""></div>
-                <div>${name}</div>
-            </div>
-        </td>
+        <td class="name"><div>
+            <div><img src="./heroes/portraits/${name}.png" alt=""></div>
+            <div>${name}</div>
+        </div></td>
         <td class="element">${element}</td>
     </tr>`
 }
@@ -62,14 +79,6 @@ function memoizeSortedHeroes(heroList) {
             sortBy, sortRows(heroList, sortBy).map(toRows)
         );
     });
-
-    return memoizedSorts.get('rank').join('');
-}
-
-function setRows(rows) {
-    document
-        .querySelector('#hero-ranks > table > tbody')
-        .innerHTML = rows;
 }
 
 createTable();
@@ -77,6 +86,5 @@ createTable();
 fetch('./heroes/data.json')
     .then(response => response.json())
     .then(memoizeSortedHeroes)
-    .then(setRows)
+    .then(() => sortRowsBy('rank'))
     .catch(e => console.log(e));
-
