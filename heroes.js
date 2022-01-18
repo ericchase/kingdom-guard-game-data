@@ -77,4 +77,6 @@ createTable();
 fetch('./heroes/data.json')
     .then(response => response.json())
     .then(memoizeSortedHeroes)
-    .then(setRows);
+    .then(setRows)
+    .catch(e => console.log(e));
+
