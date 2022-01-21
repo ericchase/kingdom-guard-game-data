@@ -56,8 +56,8 @@ function setupTimer(nodes, callback) {
 
 function setupLazyLoading(selector, callback) {
     const nodes = new Set(document.querySelectorAll(selector));
-    // if ('IntersectionObserver' in window)
-    //     setupObserver(nodes, callback);
-    // else
-    setupTimer(nodes, callback);
+    if ('IntersectionObserver' in window)
+        setupObserver(nodes, callback);
+    else
+        setupTimer(nodes, callback);
 }
