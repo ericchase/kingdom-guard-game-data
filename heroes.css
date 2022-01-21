@@ -83,16 +83,16 @@ body {
 #hero-ranks tbody .rF .rank {
   background-color: #3f5af950;
 }
-#hero-ranks tbody .Archer .name > div > div:first-child {
+#hero-ranks tbody .Archer .portrait {
   box-shadow: 3px 3px 5px -1px #fcb82d;
 }
-#hero-ranks tbody .Fire .name > div > div:first-child {
+#hero-ranks tbody .Fire .portrait {
   box-shadow: 3px 3px 5px -1px #ff1e19;
 }
-#hero-ranks tbody .Goblin .name > div > div:first-child {
+#hero-ranks tbody .Goblin .portrait {
   box-shadow: 3px 3px 5px -1px #33e675;
 }
-#hero-ranks tbody .Ice .name > div > div:first-child {
+#hero-ranks tbody .Ice .portrait {
   box-shadow: 3px 3px 5px -1px #2caaff;
 }
 #hero-ranks tbody .rank {
@@ -103,20 +103,20 @@ body {
 #hero-ranks tbody .rarity {
   width: 6rem;
 }
-#hero-ranks tbody .name {
+#hero-ranks tbody .character {
   width: 10rem;
 }
-#hero-ranks tbody .name > div {
+#hero-ranks tbody .character > div {
   display: inline-flex;
   flex-direction: column;
   align-items: center;
   gap: 5px;
 }
-#hero-ranks tbody .name > div > div:first-child {
+#hero-ranks tbody .character .portrait {
   overflow: hidden;
   border: thin solid #fff;
 }
-#hero-ranks tbody .name img {
+#hero-ranks tbody .character .portrait img {
   width: 50px;
   height: calc(50px * 0.85);
   transform: scale(1.6);
