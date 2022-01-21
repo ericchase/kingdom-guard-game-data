@@ -1,29 +1,29 @@
-function setupLazyload(imageNodes) {
-    function loadImage(image) {
-        image.src = image.dataset.src;
-        image.classList.remove('lazy');
-        imageObserver.unobserve(image);
+function setupObserver(nodes, callback) {
+    function loadNode(node) {
+        callback(node);
+        observer.unobserve(node);
     }
 
     function observeHandler(entries, observer) {
         for (const entry of entries)
             if (entry.isIntersecting)
-                loadImage(entry.target);
+                loadNode(entry.target);
     }
 
-    const imageObserver = new IntersectionObserver(observeHandler);
+    const observer = new IntersectionObserver(observeHandler);
 
-    for (const image of imageNodes)
-        imageObserver.observe(image);
+    for (const node of nodes) {
+        observer.observe(node);
+    }
 }
 
-function setupLazyloadFallback(imageNodes) {
-    const isInView = (image) => image.offsetTop < window.innerHeight + window.pageYOffset;
+function setupTimer(nodes, callback) {
+    const isInView = (node) => {
+        const top = node.getBoundingClientRect().top
+        return 0 < top && top < window.innerHeight
+    };
 
-    function loadImage(image) {
-        image.src = image.dataset.src;
-        image.classList.remove('lazy');
-    }
+    const loadNode = (node) => callback(node);
 
     function addEventListeners() {
         document.addEventListener('scroll', lazyload);
@@ -41,18 +41,23 @@ function setupLazyloadFallback(imageNodes) {
     function lazyload() {
         timeout ??= setTimeout(function () {
             timeout = undefined;
-            for (const image of imageNodes)
-                if (isInView(image))
-                    imageNodes.delete(image), loadImage(image);
-
-            if (imageNodes.size === 0)
+            for (const node of nodes) {
+                if (isInView(node))
+                    nodes.delete(node), loadNode(node);
+            }
+            if (nodes.size === 0)
                 removeEventListeners();
         }, 100);
     }
 
     addEventListeners();
+    lazyload();
 }
 
-const imageNodes = new Set(document.querySelectorAll('img.lazy'));
-if ('IntersectionObserver' in window) setupLazyload(imageNodes);
-else setupLazyloadFallback(imageNodes);
+function setupLazyLoading(selector, callback) {
+    const nodes = new Set(document.querySelectorAll(selector));
+    // if ('IntersectionObserver' in window)
+    //     setupObserver(nodes, callback);
+    // else
+    setupTimer(nodes, callback);
+}
