@@ -55,7 +55,7 @@ function toRows(heroData) {
         <td class="rank">${rank}</td>
         <td class="rarity">${rarity}</td>
         <td class="name"><div>
-            <div><img src="./heroes/portraits/${name}.png" alt=""></div>
+            <div><img class=".lazy" ata-src="./heroes/portraits/${name}.png" alt="${name}"></div>
             <div>${name}</div>
         </div></td>
         <td class="element">${element}</td>
