@@ -1,13 +1,13 @@
-const skillPowerMap = {}
+const skillBoostMap = {}
 
-function updateSkillPowerMap(skill) {
-    if (skill.name in skillPowerMap) {
-        if (!skillPowerMap[skill.name].includes(skill.power)) {
-            skillPowerMap[skill.name].push(skill.power);
-            skillPowerMap[skill.name].sort((a, b) => a - b);
+function updateSkillBoostMap(skill) {
+    if (skill.name in skillBoostMap) {
+        if (!skillBoostMap[skill.name].includes(skill.boost)) {
+            skillBoostMap[skill.name].push(skill.boost);
+            skillBoostMap[skill.name].sort((a, b) => a - b);
         }
     } else {
-        skillPowerMap[skill.name] = [skill.power];
+        skillBoostMap[skill.name] = [skill.boost];
     }
 }
 
@@ -18,10 +18,10 @@ class Skill {
         if (this.support)
             data = data.replace('*', '');
         this.name = '';
-        this.power = null;
+        this.boost = null;
         for (const token of data.split(' '))
             if (Number(token))
-                this.power = Number.parseInt(token);
+                this.boost = Number.parseInt(token);
             else
                 this.name += token + ' ';
         this.name = this.name.trim();
@@ -33,8 +33,8 @@ function parseSkills(data) {
     for (let i = 0; i < data.length; i++) {
         const skill = new Skill(i + 1, data[i])
         skillList.push(skill);
-        if (skill.name && skill.power)
-            updateSkillPowerMap(skill);
+        if (skill.name && skill.boost)
+            updateSkillBoostMap(skill);
     }
     return skillList;
 }
@@ -45,7 +45,7 @@ class Hero {
         this.rarity = rarity;
         this.name = name;
         this.skillList = parseSkills(skills);
-        this.rating = this.skillList.reduce((acc, skill) => acc + skill.power, 0);
+        this.rating = this.skillList.reduce((acc, skill) => acc + skill.boost, 0);
     }
 }
 
@@ -65,8 +65,8 @@ function displayHeroes(heroList) {
             const cell = document.createElement('td');
             if (skill.name) {
                 cell.innerHTML = skill.name;
-                if (skill.power) {
-                    cell.innerHTML += ` (${skill.power})`;
+                if (skill.boost) {
+                    cell.innerHTML += ` (${skill.boost})`;
                 }
             }
             if (skill.support)
