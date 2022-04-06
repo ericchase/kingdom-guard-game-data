@@ -1,0 +1,5 @@
+All skills are applied to the owning queue regardless of hero's position
+Exception: Monster Counter, First Aid(?), and Regeneration(?) only apply when hero is in lead position
+Support skills are also applied to non-owning queues when hero is in assistant position
+
+(This information is accurate so far.)

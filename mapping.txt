@@ -1,0 +1,2 @@
+X:3832 Y:1093 Ancient Quarry
+X:3829 Y:1022 Temple of Heroes
