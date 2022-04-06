@@ -55,7 +55,7 @@ function displayHeroes(heroList) {
     table.classList.add('display');
     table.classList.add('compact');
     const theader = document.createElement('thead');
-    theader.innerHTML = '<th></th><th>Name</th><th class="type">Type</th><th>Rarity</th><th>* Skill</th><th>** Skill</th><th>*** Skill</th><th>**** Skill</th><th>***** Skill</th><th class="rating">Rating</th>';
+    theader.innerHTML = '<th></th><th>Name</th><th class="type">Type</th><th>Rarity</th><th>⭐ Skill</th><th>⭐⭐ Skill</th><th>⭐⭐⭐ Skill</th><th>⭐⭐⭐⭐ Skill</th><th>⭐⭐⭐⭐⭐ Skill</th><th class="rating">Rating</th>';
     table.appendChild(theader);
     const tbody = document.createElement('tbody');
     for (const hero of heroList) {
