@@ -5,4 +5,5 @@ https://play.google.com/store/apps/details?id=com.tap4fun.odin.kingdomguard&hl=e
 
 
 ### Live on Github Pages
-https://ericchase.github.io/kingdom-guard-game-data/
+https://ericchase.github.io/web--kingdom-guard-game-data/
+
